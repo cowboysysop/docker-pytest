@@ -1,0 +1,49 @@
+name: Lint and Test
+
+on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+
+      - name: Lint
+        uses: github/super-linter@v4.8.4
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: false
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+
+      - name: Generate metadata
+        id: metadata
+        uses: docker/metadata-action@v3.6.1
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/pytest
+
+      - name: Build
+        uses: docker/build-push-action@v2.7.0
+        with:
+          tags: ${{ steps.metadata.outputs.tags }}
+          labels: ${{ steps.metadata.outputs.labels }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v2.3.1
+        with:
+          python-version: 3.10.0 # renovate: python
+
+      - name: Install Python dependencies
+        run: pip install -r tests/requirements.txt
+
+      - name: Test
+        run: pytest -v --image ${{ steps.metadata.outputs.tags }}
