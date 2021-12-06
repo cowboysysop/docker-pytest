@@ -1,0 +1,6 @@
+grpcio==1.42.0
+grpcio_health_checking==1.42.0
+mariadb==1.0.8
+psycopg2==2.9.2
+pytest==6.2.5
+requests==2.26.0
