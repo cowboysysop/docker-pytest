@@ -1,0 +1,72 @@
+{
+  "dependencyDashboard": true,
+  "semanticCommits": "enabled",
+  "semanticCommitScope": null,
+  "semanticCommitType": "fix",
+  "packageRules": [
+    {
+      "matchPaths": [
+        ".github/workflows/**"
+      ],
+      "semanticCommitType": "ci"
+    },
+    {
+      "matchPaths": [
+        "tests/**"
+      ],
+      "semanticCommitType": "test"
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^\\.github\\/workflows\\/.*$"
+      ],
+      "matchStrings": [
+        " (?<depName>conventional-changelog-conventionalcommits?)@(?<currentValue>.+?)\\n"
+      ],
+      "datasourceTemplate": "npm"
+    },
+    {
+      "fileMatch": [
+        "^\\.github\\/workflows\\/.*$"
+      ],
+      "matchStrings": [
+        "(:|-) (?<currentValue>.+?) # renovate: node\\n"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "node",
+      "extractVersionTemplate": "^(?<version>.+)-\\d+$",
+      "lookupNameTemplate": "actions/node-versions"
+    },
+    {
+      "fileMatch": [
+        "^\\.github\\/workflows\\/.*$"
+      ],
+      "matchStrings": [
+        "(:|-) (?<currentValue>.+?) # renovate: python\\n"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "python",
+      "extractVersionTemplate": "^(?<version>.+)-\\d+$",
+      "lookupNameTemplate": "actions/python-versions"
+    },
+    {
+      "fileMatch": [
+        "^\\.github\\/workflows\\/.*$"
+      ],
+      "matchStrings": [
+        "(:|-) (?<currentValue>.+?) # renovate: semantic-release\\n"
+      ],
+      "datasourceTemplate": "npm",
+      "depNameTemplate": "semantic-release"
+    }
+  ]
+}

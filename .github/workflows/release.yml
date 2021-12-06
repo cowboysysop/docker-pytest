@@ -1,0 +1,57 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: 16.13.1 # renovate: node
+
+      - name: Release
+        id: release
+        uses: cycjimmy/semantic-release-action@v2.6.0
+        with:
+          semantic_version: 18.0.1 # renovate: semantic-release
+          extra_plugins: |
+            conventional-changelog-conventionalcommits@4.6.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate metadata
+        id: metadata
+        uses: docker/metadata-action@v3.6.1
+        if: steps.release.outputs.new_release_published == 'true'
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/pytest
+          tags: |
+            type=raw,value=${{ steps.release.outputs.new_release_version }}
+          flavor: |
+            latest=true
+
+      - name: Login to registry
+        uses: docker/login-action@v1.10.0
+        if: steps.release.outputs.new_release_published == 'true'
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v2.7.0
+        if: steps.release.outputs.new_release_published == 'true'
+        with:
+          push: true
+          tags: ${{ steps.metadata.outputs.tags }}
+          labels: ${{ steps.metadata.outputs.labels }}
