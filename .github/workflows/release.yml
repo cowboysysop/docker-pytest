@@ -25,7 +25,7 @@ jobs:
         with:
           semantic_version: 18.0.1 # renovate: semantic-release
           extra_plugins: |
-            conventional-changelog-conventionalcommits@4.6.1
+            conventional-changelog-conventionalcommits@4.6.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
