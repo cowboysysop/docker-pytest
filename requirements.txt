@@ -1,4 +1,4 @@
-grpcio==1.42.0
+grpcio==1.43.0
 grpcio_health_checking==1.42.0
 mariadb==1.0.9
 psycopg2==2.9.3
