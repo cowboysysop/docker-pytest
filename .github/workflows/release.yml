@@ -23,7 +23,7 @@ jobs:
         id: release
         uses: cycjimmy/semantic-release-action@v2.7.0
         with:
-          semantic_version: 18.0.1 # renovate: semantic-release
+          semantic_version: 19.0.2 # renovate: semantic-release
           extra_plugins: |
             conventional-changelog-conventionalcommits@4.6.3
         env:
