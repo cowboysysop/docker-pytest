@@ -3,4 +3,4 @@ grpcio_health_checking==1.43.0
 mariadb==1.0.9
 psycopg2==2.9.3
 pytest==6.2.5
-requests==2.26.0
+requests==2.27.1
