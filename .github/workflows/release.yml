@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3.1.1
         with:
-          node-version: 16.15.0 # renovate: node
+          node-version: 18.1.0 # renovate: node
 
       - name: Release
         id: release
