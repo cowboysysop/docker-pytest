@@ -39,6 +39,17 @@
         "^\\.github\\/workflows\\/.*$"
       ],
       "matchStrings": [
+        "(:|-) (?<currentValue>.+?) # renovate: cosign\\n"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "cosign",
+      "lookupNameTemplate": "sigstore/cosign"
+    },
+    {
+      "fileMatch": [
+        "^\\.github\\/workflows\\/.*$"
+      ],
+      "matchStrings": [
         "(:|-) (?<currentValue>.+?) # renovate: node\\n"
       ],
       "datasourceTemplate": "github-releases",
