@@ -29,7 +29,7 @@ jobs:
         with:
           semantic_version: 19.0.3 # renovate: semantic-release
           extra_plugins: |
-            conventional-changelog-conventionalcommits@4.6.3
+            conventional-changelog-conventionalcommits@5.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
