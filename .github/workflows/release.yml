@@ -62,7 +62,7 @@ jobs:
           labels: ${{ steps.metadata.outputs.labels }}
 
       - name: Install Cosign
-        uses: sigstore/cosign-installer@v2.5.0
+        uses: sigstore/cosign-installer@v2.5.1
         if: steps.release.outputs.new_release_published == 'true'
         with:
           cosign-release: v1.10.1 # renovate: cosign
