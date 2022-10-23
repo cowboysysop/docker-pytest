@@ -35,7 +35,7 @@ jobs:
 
       - name: Generate metadata
         id: metadata
-        uses: docker/metadata-action@v4.1.0
+        uses: docker/metadata-action@v4.1.1
         if: steps.release.outputs.new_release_published == 'true'
         with:
           images: ghcr.io/${{ github.repository_owner }}/pytest
