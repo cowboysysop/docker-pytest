@@ -1,5 +1,5 @@
 grpcio==1.51.1
-grpcio_health_checking==1.50.0
+grpcio_health_checking==1.51.1
 mariadb==1.0.11
 psycopg2==2.9.5
 pytest==7.2.0
