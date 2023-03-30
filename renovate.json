@@ -43,7 +43,7 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "cosign",
-      "lookupNameTemplate": "sigstore/cosign"
+      "packageNameTemplate": "sigstore/cosign"
     },
     {
       "fileMatch": [
@@ -55,7 +55,7 @@
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "node",
       "extractVersionTemplate": "^(?<version>.+)-\\d+$",
-      "lookupNameTemplate": "actions/node-versions"
+      "packageNameTemplate": "actions/node-versions"
     },
     {
       "fileMatch": [
@@ -67,7 +67,7 @@
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "python",
       "extractVersionTemplate": "^(?<version>.+)-\\d+$",
-      "lookupNameTemplate": "actions/python-versions"
+      "packageNameTemplate": "actions/python-versions"
     },
     {
       "fileMatch": [
