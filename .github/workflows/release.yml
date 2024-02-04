@@ -65,7 +65,7 @@ jobs:
         uses: sigstore/cosign-installer@v2.8.1
         if: steps.release.outputs.new_release_published == 'true'
         with:
-          cosign-release: v1.13.2 # renovate: cosign
+          cosign-release: v2.2.3 # renovate: cosign
 
       - name: Sign
         run: cosign sign ghcr.io/${{ github.repository_owner }}/pytest@${{ steps.build-push.outputs.digest }}
