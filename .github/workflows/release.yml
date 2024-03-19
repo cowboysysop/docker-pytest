@@ -68,5 +68,5 @@ jobs:
           cosign-release: v2.2.3 # renovate: cosign
 
       - name: Sign
-        run: cosign sign ghcr.io/${{ github.repository_owner }}/pytest@${{ steps.build-push.outputs.digest }}
+        run: cosign sign --yes ghcr.io/${{ github.repository_owner }}/pytest@${{ steps.build-push.outputs.digest }}
         if: steps.release.outputs.new_release_published == 'true'
