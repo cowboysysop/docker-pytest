@@ -58,7 +58,7 @@ jobs:
 
       - name: Build and push
         id: build-push
-        uses: docker/build-push-action@v6.7.0
+        uses: docker/build-push-action@v6.8.0
         if: steps.release.outputs.new_release_published == 'true'
         with:
           push: true
