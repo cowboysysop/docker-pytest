@@ -42,7 +42,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5.5.0
         with:
-          python-version: 3.13.2 # renovate: python
+          python-version: 3.13.3 # renovate: python
 
       - name: Install Python dependencies
         run: pip install -r tests/requirements.txt
