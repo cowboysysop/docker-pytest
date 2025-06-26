@@ -5,13 +5,13 @@
   "semanticCommitType": "fix",
   "packageRules": [
     {
-      "matchPaths": [
+      "matchFileNames": [
         ".github/workflows/**"
       ],
       "semanticCommitType": "ci"
     },
     {
-      "matchPaths": [
+      "matchFileNames": [
         "tests/**"
       ],
       "semanticCommitType": "test"
@@ -24,10 +24,11 @@
       "automerge": true
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": [
-        "^\\.github\\/workflows\\/.*$"
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.github\\/workflows\\/.*$/"
       ],
       "matchStrings": [
         " (?<depName>conventional-changelog-conventionalcommits?)@(?<currentValue>.+?)\\n"
@@ -35,8 +36,9 @@
       "datasourceTemplate": "npm"
     },
     {
-      "fileMatch": [
-        "^\\.github\\/workflows\\/.*$"
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.github\\/workflows\\/.*$/"
       ],
       "matchStrings": [
         "(:|-) (?<currentValue>.+?) # renovate: cosign\\n"
@@ -46,8 +48,9 @@
       "packageNameTemplate": "sigstore/cosign"
     },
     {
-      "fileMatch": [
-        "^\\.github\\/workflows\\/.*$"
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.github\\/workflows\\/.*$/"
       ],
       "matchStrings": [
         "(:|-) (?<currentValue>.+?) # renovate: node\\n"
@@ -58,8 +61,9 @@
       "packageNameTemplate": "actions/node-versions"
     },
     {
-      "fileMatch": [
-        "^\\.github\\/workflows\\/.*$"
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.github\\/workflows\\/.*$/"
       ],
       "matchStrings": [
         "(:|-) (?<currentValue>.+?) # renovate: python\\n"
@@ -70,8 +74,9 @@
       "packageNameTemplate": "actions/python-versions"
     },
     {
-      "fileMatch": [
-        "^\\.github\\/workflows\\/.*$"
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.github\\/workflows\\/.*$/"
       ],
       "matchStrings": [
         "(:|-) (?<currentValue>.+?) # renovate: semantic-release\\n"
