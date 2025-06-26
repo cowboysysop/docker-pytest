@@ -5,6 +5,12 @@
   "semanticCommitType": "fix",
   "packageRules": [
     {
+      "matchPackageNames": [
+        "/^grpcio.*$/"
+      ],
+      "groupName": "grpcio"
+    },
+    {
       "matchFileNames": [
         ".github/workflows/**"
       ],
