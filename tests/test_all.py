@@ -34,5 +34,9 @@ def test_pytest_version(host):
     assert re.match(r"^pytest \d+\.\d+\.\d+$", output)
 
 
+def test_pytest_asyncio_package(packages):
+    assert "pytest-asyncio" in packages
+
+
 def test_requests_package(packages):
     assert "requests" in packages
