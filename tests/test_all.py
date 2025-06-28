@@ -1,3 +1,5 @@
+# pylint: disable=missing-function-docstring
+# pylint: disable=missing-module-docstring
 import re
 
 
@@ -11,6 +13,10 @@ def test_grpcio_health_checking_package(packages):
 
 def test_mariadb_package(packages):
     assert "mariadb" in packages
+
+
+def test_mcp_package(packages):
+    assert "mcp" in packages
 
 
 def test_psycopg2_package(packages):
