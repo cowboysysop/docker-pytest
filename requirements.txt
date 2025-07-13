@@ -1,6 +1,6 @@
 grpcio==1.73.1
 grpcio_health_checking==1.73.1
-mariadb==1.1.12
+mariadb==1.1.13
 mcp==1.10.1
 psycopg2==2.9.10
 pytest==8.4.1
