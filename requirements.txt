@@ -1,7 +1,7 @@
 grpcio==1.74.0
 grpcio_health_checking==1.74.0
 mariadb==1.1.13
-mcp==1.14.0
+mcp==1.14.1
 psycopg2==2.9.10
 pytest==8.4.2
 pytest-asyncio==1.2.0
