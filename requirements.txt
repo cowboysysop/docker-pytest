@@ -1,5 +1,5 @@
-grpcio==1.75.0
-grpcio_health_checking==1.75.0
+grpcio==1.75.1
+grpcio_health_checking==1.75.1
 mariadb==1.1.13
 mcp==1.14.1
 psycopg2==2.9.10
