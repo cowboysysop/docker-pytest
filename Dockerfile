@@ -1,4 +1,4 @@
-FROM python:3.14.2
+FROM python:3.14.6
 
 WORKDIR /tests
 
